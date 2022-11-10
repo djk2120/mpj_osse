@@ -29,3 +29,7 @@ creating the 2xco2 production:
  - ../../create_clone --clone PPEn11_CTL2010SP_US-Mpj-beta3 --case PPEn11_2xCO2SP_US-Mpj-beta3 --keepexe
  - cd PPEn11_2xCO2SP_US-Mpj-beta3
  - ./xmlchange CCSM_CO2_PPMV=734.0
+ 
+running the 2xco2 simulations:
+ - make the config file: a_2xco2.config
+ - qcmd -l walltime=2:00:00 -- bash ~/ppe_tools/jobscripts/run_ens.sh a_2xco2.config &> a_2xco2.log &
