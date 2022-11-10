@@ -1,8 +1,19 @@
-## November 10, 2022
-
 need two packages external to this repo
  - ppe_tool
  - tether
+ 
+### Experiment A: US-Mpj, kmax and p50
+ - varying kmax and psi50, 100 simulations, factorial design
+    - docs.google.com/spreadsheets/d/1aFf5gMXY_YUVT3gC4k31x-2_KOCVGm_QFW74VI9K4eU/
+ - running ctl and 2xco2 simulations
+ - basecases: dir=/glade/work/djk2120/ctsm_amflx/cime/scripts/CTL2010SP/basecases
+    - PPEn11_2xCO2SPSpin_US-Mpj-beta3 (32-year spinup)
+    - PPEn11_2xCO2SP_US-Mpj-beta3 (2008-2017)
+    - PPEn11_CTL2010SPSpin_US-Mpj-beta3 (32-year spinup)
+    - PPEn11_CTL2010SP_US-Mpj-beta3 (2008-2017)
+
+## November 10, 2022
+Setting up Experiment A
 
 made the paramfiles
  - ../params/params.ipynb
