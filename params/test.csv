@@ -1,0 +1,4 @@
+final,name,loc,min,max
+include?,0,paramfile or namelist?,0,0
+1,kmax,P,3e-9,3.8e-8
+1,psi50,P,275000,700000
