@@ -28,7 +28,7 @@ testing for just one parameterization:
  - looks good
 
 running for the other 100:
- - qcmd -l walltime=2:00:00 -- bash ~/ppe_tools/jobscripts/run_ens.sh a_ctl.config &> a_ctl.log &
+ - qcmd -- bash ~/ppe_tools/jobscripts/run_ens.sh a_ctl.config &> a_ctl.log &
  
  
 creating the 2xco2 spinup:
@@ -45,4 +45,27 @@ creating the 2xco2 production:
  
 running the 2xco2 simulations:
  - make the config file: a_2xco2.config
- - qcmd -l walltime=2:00:00 -- bash ~/ppe_tools/jobscripts/run_ens.sh a_2xco2.config &> a_2xco2.log &
+ - qcmd -- bash ~/ppe_tools/jobscripts/run_ens.sh a_2xco2.config &> a_2xco2.log &
+ 
+ 
+## November 10, 2022
+Extending Experiment A
+
+adding some more (low) kmax values:
+ - see params.ipynb
+ - ls /glade/scratch/djk2120/PPEn11/amflx_lhc/paramfiles/a*.nc | cut -d. -f1 | cut -d/ -f8 | tail -n 70 > a2.txt
+ - sed 's/a.txt/a2.txt/g' a_ctl.config > a2_ctl.config
+ - sed 's/a.txt/a2.txt/g' a_2xco2.config > a2_2xco2.config
+ - qcmd -- bash ~/ppe_tools/jobscripts/run_ens.sh a2_ctl.config &> a2_ctl.log &
+ - qcmd -- bash ~/ppe_tools/jobscripts/run_ens.sh a2_2xco2.config &> a2_2xco2.log &
+ 
+ 
+## December 20, 2022
+Adding a low precip experiment (80%)
+
+created source mods:
+ - see SourceMods/80prec
+ - multiplied forced snow and rain by 0.8, during first partition
+ - had to nullify gridcell level balance check (but not column)
+ 
+ 
